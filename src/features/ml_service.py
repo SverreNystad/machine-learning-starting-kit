@@ -19,6 +19,7 @@ def prepare_data(
     Args:
         validation_size: The size of the validation set. Should be between 0.0 and 1.0.
         test_size: The size of the test set. Should be between 0.0 and 1.0.
+        loader: An instance of the DataLoader class to load the data.
 
     Returns:
         A tuple containing the training, validation, and test data.
