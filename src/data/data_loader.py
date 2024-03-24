@@ -8,29 +8,27 @@ import src.config as config
 
 
 class DataLoader(ABC):
-    
+
     @abstractmethod
-    def load_raw_data() -> tuple[pd.DataFrame, pd.Series]:
+    def load_raw_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
+        """Load the data and return the features and target variable."""
         pass
 
     @abstractmethod
-    def load_raw_test_data() -> pd.DataFrame:
+    def load_raw_test_data(self) -> pd.DataFrame:
+        """Load the test data."""
         pass
-
 
 
 class LocalDataLoader(DataLoader):
-    def load_raw_data() -> tuple[pd.DataFrame, pd.Series]:
-        """Load the data and return the features and target variable."""
+    def load_raw_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
         data = pd.read_csv(config.TRAINING_DATA_FILE)
-        target_column = config.TARGET_FEATURES 
+        target_column = config.TARGET_FEATURES
         x = data.drop(target_column, axis=1)
         y = data[target_column]
         return x, y
 
-
-    def load_raw_test_data() -> pd.DataFrame:
-        """Load the test data."""
+    def load_raw_test_data(self) -> pd.DataFrame:
         data = pd.read_csv(config.TEST_DATA_FILE)
         return data
 
@@ -42,7 +40,7 @@ class MockDataLoader(DataLoader):
         self.n_test = n_test
 
     def load_raw_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
-        X_train, y_train, X_test, y_test = self.get_data(self.n_train, self.n_test)
+        X_train, y_train, _, _ = self.get_data(self.n_train, self.n_test)
         return pd.DataFrame(X_train), pd.DataFrame(y_train)
 
     def load_raw_test_data(self) -> pd.DataFrame:
