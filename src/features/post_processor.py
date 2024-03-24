@@ -29,6 +29,6 @@ def save_predictions(predictions: pd.DataFrame, file_name: str) -> None:
     predictions.to_csv(predictions_filename, index=False)
 
 
-def post_process(data: pd.DataFrame) -> pd.DataFrame:
-    """Post-process the data."""
-    return data
+def post_process(predictions: pd.DataFrame) -> pd.DataFrame:
+    """Post-process the predictions."""
+    return predictions
