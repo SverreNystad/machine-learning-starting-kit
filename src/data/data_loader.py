@@ -4,6 +4,9 @@ import pandas as pd
 import numpy as np
 from abc import ABC, abstractmethod
 
+import src.config as config
+
+
 class DataLoader(ABC):
     
     @abstractmethod
