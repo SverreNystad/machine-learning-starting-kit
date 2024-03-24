@@ -1,6 +1,8 @@
-""" Configuration file for the task5 application. """
+""" Configuration file for the Machine learning application. """
 
-# Training data file path
+LOADER_NAME = "local_data_loader"
+
+# Local Training data file path
 TRAINING_DATA_FILE = "../data/Transaction data training.csv"
 TEST_DATA_FILE = "../data/Transaction data training.csv"
 
