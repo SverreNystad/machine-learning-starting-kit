@@ -10,8 +10,16 @@ def plot_residual_predictions(submission_1_name: str, submission_2_name: str) ->
     """
     Plot the residuals of two submissions. The residuals are the difference between the two submissions.
     """
-    prediction_1 = pd.read_csv(PREDICTIONS_PATH + submission_1_name + ".csv")
-    prediction_2 = pd.read_csv(PREDICTIONS_PATH + submission_2_name + ".csv")
+
+    prediction_1_path = PREDICTIONS_PATH + submission_1_name
+    prediction_2_path = PREDICTIONS_PATH + submission_2_name
+    if not prediction_1_path.endswith(".csv"):
+        prediction_1_path += ".csv"
+    if not prediction_2_path.endswith(".csv"):
+        prediction_2_path += ".csv"
+
+    prediction_1 = pd.read_csv(prediction_1_path)
+    prediction_2 = pd.read_csv(prediction_2_path)
     residual = prediction_1 - prediction_2
 
     # Plot the residuals
