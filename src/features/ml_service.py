@@ -2,23 +2,27 @@
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from src.data.data_loader import load_raw_data, load_raw_test_data
+from src.data.data_loader import DataLoader, create_data_loader
 from src.features.feature_engineering import engineer_features
 
 
-def prepare_data(test_size: float = 0.2) -> tuple:
+def prepare_data(
+    validation_size: float = 0.1,
+    test_size: float = 0.1,
+    loader: DataLoader = create_data_loader(),
+) -> tuple:
     """
     Prepare the data for the machine learning model.
     This includes loading the data, feature engineering, and splitting the data into
     training, validation, and testing sets.
 
-    The test_size parameter represents the proportion of the dataset to include in the test split,
-    and the validation_size parameter represents the proportion of the training dataset to include
-    in the validation split.
+    Args:
+        validation_size: The size of the validation set. Should be between 0.0 and 1.0.
+        test_size: The size of the test set. Should be between 0.0 and 1.0.
 
     Returns:
         A tuple containing the training, validation, and test data.
-        x_train, y_train, x_test, y_test.
+        x_train, x_validate, x_test, y_train, y_validate, y_test.
 
     Example:
         >>> X_train, X_validate, X_test, y_train, y_validate, y_test = prepare_data()
@@ -26,22 +30,42 @@ def prepare_data(test_size: float = 0.2) -> tuple:
         >>> valid_score = model.score(X_validate, y_validate)
         >>> test_score = model.score(X_test, y_test)
     """
-    # Load the data
-    x, y = load_raw_data()
+    if not 0.0 <= validation_size <= 1.0:
+        raise ValueError("validation_size should be between 0.0 and 1.0.")
+    if not 0.0 <= test_size <= 1.0:
+        raise ValueError("test_size should be between 0.0 and 1.0.")
 
-    # Feature engineering
+    # Prepare the data
+    x, y = loader.load_raw_data()
+
     engineered_features = engineer_features(x)
 
-    # Split the data into training and test sets
+    # Determine the total size of the dataset to be allocated to training
+    holdout_size = validation_size + test_size
+    if holdout_size > 1:
+        raise ValueError(
+            f"The sum of validation_size and test_size should be less than 1. Got {holdout_size}."
+        )
+
+    # Ensure validation_size and test_size are correctly calculated as proportions of the remaining dataset
+    temp_test_size = test_size / holdout_size
+
+    # Split the data into training and a temporary set
     RANDOM_STATE: int = 42
-    x_train, x_test, y_train, y_test = train_test_split(
-        engineered_features, y, test_size=test_size, random_state=RANDOM_STATE
+    x_train, x_temp, y_train, y_temp = train_test_split(
+        engineered_features,
+        y,
+        test_size=(validation_size + test_size),
+        random_state=RANDOM_STATE,
     )
 
-    return x_train, x_test, y_train, y_test
+    # Split the temporary set into validation and test sets
+    x_validate, x_test, y_validate, y_test = train_test_split(
+        x_temp, y_temp, test_size=temp_test_size, random_state=RANDOM_STATE
+    )
 
-def preprocess_data(data: pd.DataFrame) -> pd.DataFrame:
-    """ Remove duplicates"""
+    return x_train, x_validate, x_test, y_train, y_validate, y_test
+
 
 def prepare_test_data() -> pd.DataFrame:
     """
@@ -54,8 +78,9 @@ def prepare_test_data() -> pd.DataFrame:
         >>> test_data = prepare_test_data()
         >>> predictions = model.predict(test_data)
     """
-    # Load the data
-    test_data = load_raw_test_data()
+    # Prepare the Test data
+    loader: DataLoader = create_data_loader()
+    test_data = loader.load_raw_test_data()
 
     # Feature engineering
     engineered_features = engineer_features(test_data)
