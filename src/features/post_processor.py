@@ -1,5 +1,6 @@
 """ This module contains functions to post-process the data."""
 
+from datetime import datetime
 import pandas as pd
 from src.config import PREDICTIONS_PATH
 
@@ -20,6 +21,10 @@ def save_predictions(predictions: pd.DataFrame, file_name: str) -> None:
     predictions_filename = PREDICTIONS_PATH + file_name
     if not predictions_filename.endswith(".csv"):
         predictions_filename += ".csv"
+
+    # Add time to the filename
+    current_time = datetime.now().strftime("%Y%m%d%H%M%S")
+    predictions_filename = predictions_filename.replace(".csv", f"_{current_time}.csv")
 
     predictions.to_csv(predictions_filename, index=False)
 
