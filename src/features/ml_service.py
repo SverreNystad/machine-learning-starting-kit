@@ -10,7 +10,9 @@ def prepare_data(
     validation_size: float = 0.1,
     test_size: float = 0.1,
     loader: DataLoader = create_data_loader(),
-) -> tuple:
+) -> tuple[
+    pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame
+]:
     """
     Prepare the data for the machine learning model.
     This includes loading the data, feature engineering, and splitting the data into
@@ -41,6 +43,9 @@ def prepare_data(
 
     engineered_features = engineer_features(x)
 
+    empty_x = pd.DataFrame(columns=engineered_features.columns)
+    empty_y = pd.DataFrame(columns=y.columns)
+
     # Determine the total size of the dataset to be allocated to training
     holdout_size = validation_size + test_size
     if holdout_size > 1:
@@ -48,19 +53,35 @@ def prepare_data(
             f"The sum of validation_size and test_size should be less than 1. Got {holdout_size}."
         )
 
-    # Ensure validation_size and test_size are correctly calculated as proportions of the remaining dataset
+    # Define a random state for consistency in splits
+    RANDOM_STATE = 42
+
+    # Split the data into training, validation, and test sets
+    if holdout_size == 0:
+        # All data goes into training
+        return engineered_features, empty_x, empty_x, y, empty_y, empty_y
+    elif test_size == 0:
+        # No test data
+        x_train, x_validate, y_train, y_validate = train_test_split(
+            engineered_features, y, test_size=validation_size, random_state=RANDOM_STATE
+        )
+        return x_train, x_validate, empty_x, y_train, y_validate, empty_y
+    elif validation_size == 0:
+        # No validation data
+        x_train, x_test, y_train, y_test = train_test_split(
+            engineered_features, y, test_size=test_size, random_state=RANDOM_STATE
+        )
+        return x_train, empty_x, x_test, y_train, empty_y, y_test
+
+    # Calculate test size as a proportion of the holdout set
     temp_test_size = test_size / holdout_size
 
     # Split the data into training and a temporary set
-    RANDOM_STATE: int = 42
     x_train, x_temp, y_train, y_temp = train_test_split(
-        engineered_features,
-        y,
-        test_size=(validation_size + test_size),
-        random_state=RANDOM_STATE,
+        engineered_features, y, test_size=holdout_size, random_state=RANDOM_STATE
     )
 
-    # Split the temporary set into validation and test sets
+    # Further split the temporary set into validation and test sets
     x_validate, x_test, y_validate, y_test = train_test_split(
         x_temp, y_temp, test_size=temp_test_size, random_state=RANDOM_STATE
     )
