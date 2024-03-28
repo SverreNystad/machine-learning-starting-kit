@@ -1,6 +1,6 @@
 import pytest
 from src.data.data_loader import DataLoader, MockDataLoader
-from src.features.ml_service import (
+from src.ml_service import (
     prepare_data,
 )
 
