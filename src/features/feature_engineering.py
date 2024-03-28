@@ -1,8 +1,8 @@
 """ This module contains functions to prepare the data for the model. """
 
 import pandas as pd
-from sklearn.preprocessing import StandardScaler
 import numpy as np
+
 
 def engineer_features(features: pd.DataFrame) -> pd.DataFrame:
     """
@@ -16,4 +16,3 @@ def engineer_features(features: pd.DataFrame) -> pd.DataFrame:
     """
     # TODO Add relevant feature engineering
     return features
-
