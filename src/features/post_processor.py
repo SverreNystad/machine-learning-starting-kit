@@ -5,7 +5,9 @@ import pandas as pd
 from src.config import PREDICTIONS_PATH
 
 
-def save_predictions(predictions: pd.DataFrame, file_name: str) -> None:
+def save_predictions(
+    predictions: pd.DataFrame, file_name: str, shallHaveIndexColum: bool = True
+) -> None:
     """
     Save the predictions to a file and post process predictions.
 
@@ -26,7 +28,7 @@ def save_predictions(predictions: pd.DataFrame, file_name: str) -> None:
     current_time = datetime.now().strftime("%Y%m%d%H%M%S")
     predictions_filename = predictions_filename.replace(".csv", f"_{current_time}.csv")
 
-    predictions.to_csv(predictions_filename, index=False)
+    predictions.to_csv(predictions_filename, index=shallHaveIndexColum)
 
 
 def post_process(predictions: pd.DataFrame) -> pd.DataFrame:
