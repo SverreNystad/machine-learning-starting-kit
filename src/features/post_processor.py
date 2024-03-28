@@ -25,7 +25,7 @@ def save_predictions(
         predictions_filename += ".csv"
 
     # Add time to the filename
-    current_time = datetime.now().strftime("%Y%m%d%H%M%S")
+    current_time = datetime.now().strftime("%Y%m%d_%H%M%S")
     predictions_filename = predictions_filename.replace(".csv", f"_{current_time}.csv")
 
     predictions.to_csv(predictions_filename, index=shallHaveIndexColum)
