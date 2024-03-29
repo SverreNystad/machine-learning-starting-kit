@@ -23,9 +23,12 @@ class DataLoader(ABC):
 class LocalDataLoader(DataLoader):
     def load_raw_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
         data = pd.read_csv(config.TRAINING_DATA_FILE)
-        target_column = config.TARGET_FEATURES
+        target_column = config.TARGET_FEATURE
         x = data.drop(target_column, axis=1)
         y = data[target_column]
+        # Make sure the x and y are DataFrames
+        x = pd.DataFrame(x)
+        y = pd.DataFrame(y)
         return x, y
 
     def load_raw_test_data(self) -> pd.DataFrame:
