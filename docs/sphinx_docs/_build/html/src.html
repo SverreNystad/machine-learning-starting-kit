@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src package &mdash; Machine Learning Starting Kit 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=8d563738"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="src.data package" href="src.data.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Machine Learning Starting Kit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">src package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html">src.data package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.features.html">src.features package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.visualization.html">src.visualization package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.config">src.config module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.ml_service">src.ml_service module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#src.ml_service.prepare_data"><code class="docutils literal notranslate"><span class="pre">prepare_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.ml_service.prepare_test_data"><code class="docutils literal notranslate"><span class="pre">prepare_test_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#src.ml_service.save_predictions"><code class="docutils literal notranslate"><span class="pre">save_predictions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Machine Learning Starting Kit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">src package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/src.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="src-package">
+<h1>src package<a class="headerlink" href="#src-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="src.data.html">src.data package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.data.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.data.html#module-src.data.data_loader">src.data.data_loader module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.data.html#src.data.data_loader.DataLoader"><code class="docutils literal notranslate"><span class="pre">DataLoader</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.DataLoader.load_raw_data"><code class="docutils literal notranslate"><span class="pre">DataLoader.load_raw_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.DataLoader.load_raw_test_data"><code class="docutils literal notranslate"><span class="pre">DataLoader.load_raw_test_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.data.html#src.data.data_loader.LocalDataLoader"><code class="docutils literal notranslate"><span class="pre">LocalDataLoader</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.LocalDataLoader.load_raw_data"><code class="docutils literal notranslate"><span class="pre">LocalDataLoader.load_raw_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.LocalDataLoader.load_raw_test_data"><code class="docutils literal notranslate"><span class="pre">LocalDataLoader.load_raw_test_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.data.html#src.data.data_loader.MockDataLoader"><code class="docutils literal notranslate"><span class="pre">MockDataLoader</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.MockDataLoader.get_data"><code class="docutils literal notranslate"><span class="pre">MockDataLoader.get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.MockDataLoader.load_raw_data"><code class="docutils literal notranslate"><span class="pre">MockDataLoader.load_raw_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="src.data.html#src.data.data_loader.MockDataLoader.load_raw_test_data"><code class="docutils literal notranslate"><span class="pre">MockDataLoader.load_raw_test_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="src.data.html#src.data.data_loader.create_data_loader"><code class="docutils literal notranslate"><span class="pre">create_data_loader()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.data.html#module-src.data">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.features.html">src.features package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.features.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.features.html#module-src.features.feature_engineering">src.features.feature_engineering module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.features.html#src.features.feature_engineering.engineer_features"><code class="docutils literal notranslate"><span class="pre">engineer_features()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.features.html#module-src.features.post_processor">src.features.post_processor module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.features.html#src.features.post_processor.post_process"><code class="docutils literal notranslate"><span class="pre">post_process()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.features.html#module-src.features">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.features.html#src.features.engineer_features"><code class="docutils literal notranslate"><span class="pre">engineer_features()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="src.features.html#src.features.post_process"><code class="docutils literal notranslate"><span class="pre">post_process()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="src.visualization.html">src.visualization package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="src.visualization.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="src.visualization.html#module-src.visualization.visualize">src.visualization.visualize module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="src.visualization.html#src.visualization.visualize.plot_residual_predictions"><code class="docutils literal notranslate"><span class="pre">plot_residual_predictions()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="src.visualization.html#module-src.visualization">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-src.config">
+<span id="src-config-module"></span><h2>src.config module<a class="headerlink" href="#module-src.config" title="Link to this heading"></a></h2>
+<p>Configuration file for the Machine learning application.</p>
+</section>
+<section id="module-src.ml_service">
+<span id="src-ml-service-module"></span><h2>src.ml_service module<a class="headerlink" href="#module-src.ml_service" title="Link to this heading"></a></h2>
+<p>This module contains the functions to prepare the data for the machine learning model.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ml_service.prepare_data">
+<span class="sig-prename descclassname"><span class="pre">src.ml_service.</span></span><span class="sig-name descname"><span class="pre">prepare_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validation_size:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size:</span> <span class="pre">float</span> <span class="pre">=</span> <span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loader:</span> <span class="pre">~src.data.data_loader.DataLoader</span> <span class="pre">=</span> <span class="pre">&lt;src.data.data_loader.LocalDataLoader</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/src/ml_service.html#prepare_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ml_service.prepare_data" title="Link to this definition"></a></dt>
+<dd><p>Prepare the data for the machine learning model.
+This includes loading the data, feature engineering, and splitting the data into
+training, validation, and testing sets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>validation_size</strong> – The size of the validation set. Should be between 0.0 and 1.0.</p></li>
+<li><p><strong>test_size</strong> – The size of the test set. Should be between 0.0 and 1.0.</p></li>
+<li><p><strong>loader</strong> – An instance of the DataLoader class to load the data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the training, validation, and test data.
+x_train, x_validate, x_test, y_train, y_validate, y_test.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_validate</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_validate</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">prepare_data</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">valid_score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_validate</span><span class="p">,</span> <span class="n">y_validate</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">test_score</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ml_service.prepare_test_data">
+<span class="sig-prename descclassname"><span class="pre">src.ml_service.</span></span><span class="sig-name descname"><span class="pre">prepare_test_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/ml_service.html#prepare_test_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ml_service.prepare_test_data" title="Link to this definition"></a></dt>
+<dd><p>Prepare the test data for the machine learning model.</p>
+<dl class="simple">
+<dt>Returns</dt><dd><p>The test data.</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">test_data</span> <span class="o">=</span> <span class="n">prepare_test_data</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">predictions</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="src.ml_service.save_predictions">
+<span class="sig-prename descclassname"><span class="pre">src.ml_service.</span></span><span class="sig-name descname"><span class="pre">save_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shallHaveIndexColum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/src/ml_service.html#save_predictions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.ml_service.save_predictions" title="Link to this definition"></a></dt>
+<dd><p>Save the predictions to a file and post process predictions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>predictions</strong> – The predictions to save.</p></li>
+<li><p><strong>file_name</strong> – The name of the file to save the predictions to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-src">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="src.data.html" class="btn btn-neutral float-right" title="src.data package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sverre Nystad.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
