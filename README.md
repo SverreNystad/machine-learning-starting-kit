@@ -1,7 +1,16 @@
 # Machine Learning Starting Kit
 Template for machine learning projects, featuring a diverse collection of ML models, AutoML solutions, and simple EDA tools for streamlined project development. Users only need to specify target features and add their data path in the Config to kickstart a wide array of machine learning tasks.
 
-## Table of Contents
+<details>
+<summary><b>Table of Contents</b></summary>
+
+- [Machine Learning Starting Kit](#machine-learning-starting-kit)
+  - [How to Use](#how-to-use)
+  - [Project Organization](#project-organization)
+  - [Resources](#resources)
+    - [Feature Selection resources](#feature-selection-resources)
+
+</details>
 
 ## How to Use
 To use the project one must give the project access to the data. This can either be done by uploading the data in the data folder and specify the path to the data in the config script.
