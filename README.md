@@ -9,6 +9,50 @@ Or in the case the dataset is too large to be on the device, one can create a ne
 
 Start by running the different notebooks in the EDA folder to get a better understanding of the data. After this one can start running the different models in the models folder.
 
+## Project Organization
+Each folder in the project has a specific purpose and is organized as follows:
+<details>
+<summary><b>Click to expand</b></summary>
+
+```bash
+├── .github
+│   └── workflows                  # Github actions for CI/CD
+|
+├── data
+│   ├── external                   # Data from third party sources.
+│   ├── processed                  # The final, feature-engineered data sets for modeling.
+│   └── raw                        # The original, immutable data set.
+|
+├── docs                           # Design documents (or other project documentation)
+│   └── sphinx_docs                # A default Sphinx project; see sphinx-doc.org for details
+|
+├── eda                            # Notebooks for exploratory data analysis and data visualization
+|
+├── models                         # Training and prediction scripts for different models, including AutoML solutions.
+|
+├── results
+│   ├── figures                    # Generated graphics and figures to be used in reporting
+│   ├── predictions                # Model predictions as CSV files 
+│   └── reports                    # Generated analysis as HTML, PDF, LaTeX, etc.
+|
+├── src                            
+│   ├── config.py                  # Configuration file for the project
+│   ├── ml_service.py              # A class that contains all the functions needed to train and save predictions of the models
+│   ├── data                       # Scripts to fetch training and testing data
+│   │   └── data_loader.py         
+│   ├── features                   # Scripts to preprocess raw data into better features for modeling
+│   │   ├── feature_engineering.py 
+│   │   └── post_processing.py     # Script to use domain knowledge to post process the predictions
+│   └── visualization              # Scripts to create exploratory and results oriented visualizations
+│       └── visualize.py           
+|
+├── test                           # Scripts to test the project
+└── requirements.txt               # The requirements file for reproducing the analysis environment, e.g.,
+                                   # generated with `pip freeze > requirements.txt`
+
+```
+
+</details>
 
 ## Resources
 ### Feature Selection resources
