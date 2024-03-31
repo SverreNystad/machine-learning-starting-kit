@@ -8,3 +8,10 @@ To use the project one must give the project access to the data. This can either
 Or in the case the dataset is too large to be on the device, one can create a new `DataLoader` class in the `data_loader.py` script and configure the default data loader in the config script to use the new DataLoader class. After one have given access to the data one must specify the target feature in the config script. After this the project is ready to be used.
 
 Start by running the different notebooks in the EDA folder to get a better understanding of the data. After this one can start running the different models in the models folder.
+
+
+## Resources
+### Feature Selection resources
+* https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing
+* https://scikit-learn.org/stable/modules/feature_selection.html#feature-selection
+* https://scikit-learn.org/stable/modules/feature_extraction.html#feature-extraction
