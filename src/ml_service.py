@@ -1,4 +1,4 @@
-""" This module contains the functions to prepare the data for the machine learning model. """
+""" This module contains the functions to prepare the data for the machine learning model to train and save predictions. """
 
 import pandas as pd
 from sklearn.model_selection import train_test_split

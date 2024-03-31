@@ -1,4 +1,4 @@
-""" Visualization functions """
+""" Visualization functions to create exploratory and result oriented plots."""
 
 from matplotlib import pyplot as plt
 import pandas as pd
